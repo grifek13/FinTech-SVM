@@ -14,6 +14,7 @@ source env/bin/activate
 4. install dependencies
 ```
 pip install -r requirements.txt
+sudo apt install python3-tk  # if not already installed
 ```
 5. open `lib` directory
 6. you're ready to run any script from `lib` directory

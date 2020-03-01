@@ -1,9 +1,6 @@
-# This script presents data-set of irises that we use while presenting SVM.
+# This script presents dataset of irises that we use while presenting SVM.
 
 import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-import matplotlib.patches as mpatches
 from random import (seed, shuffle)
 
 # Let's load the dataset
