@@ -1,4 +1,4 @@
-# This script presents dataset of irises that we use while presenting SVM.
+# This script presents data-set of irises that we use while presenting SVM.
 
 import pandas as pd
 import numpy as np
@@ -12,7 +12,7 @@ setosa = iris[iris.species == 'setosa']
 versicolor = iris[iris.species == 'versicolor']
 virginica = iris[iris.species == 'virginica']
 
-# split dataset into training and testing set.
+# split data-set into training and testing set.
 seed(0)                  # You can make sample using any seed you want.
 N = len(iris.index)    # Number of records
 T = N // 2               # size of training set

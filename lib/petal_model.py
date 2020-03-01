@@ -5,7 +5,7 @@ import matplotlib.patches as mpatches
 import load_data as ld
 from sklearn import svm
 
-# input for the model (more than 2 clases)
+# input for the model (more than 2 classes)
 input_data = np.asmatrix(ld.training[['petal_length', 'petal_width']])
 input_species = np.array(list(map(lambda x: {'setosa': 0, 'versicolor': 1, 'virginica': 2}.get(x), ld.training['species'])))
 
@@ -14,7 +14,7 @@ KERNEL = 'linear' # possible kernels: linear, rbf, poly,
 model = svm.SVC(kernel=KERNEL, decision_function_shape='ovo') # (ovr) one versus rest | (ovo) one versus one
 model.fit(input_data, input_species)
 
-# plot the hyperplanes on the training set
+# plot the hyper-planes on the training set
 x_min, x_max = input_data[:, 0].min() - 1, input_data[:, 0].max() + 1
 y_min, y_max = input_data[:, 1].min() - 1, input_data[:, 1].max() + 1
 xx, yy = np.meshgrid(np.arange(x_min, x_max, 0.01), np.arange(y_min, y_max, 0.01))
