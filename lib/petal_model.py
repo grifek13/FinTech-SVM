@@ -1,17 +1,17 @@
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
-import load_data as ld
+import matplotlib.pyplot as plt
+import numpy as np
 from sklearn import svm
+
+import load_data as ld
 
 # input for the model (more than 2 classes)
 input_data = np.asmatrix(ld.training[['petal_length', 'petal_width']])
 input_species = np.array(list(map(lambda x: {'setosa': 0, 'versicolor': 1, 'virginica': 2}.get(x), ld.training['species'])))
 
 # fit the SVM model
-KERNEL = 'linear' # possible kernels: linear, rbf, poly,
-model = svm.SVC(kernel=KERNEL, decision_function_shape='ovo') # (ovr) one versus rest | (ovo) one versus one
+KERNEL = 'linear'  # possible kernels: linear, rbf, poly,
+model = svm.SVC(kernel=KERNEL, decision_function_shape='ovo')  # (ovr) one versus rest | (ovo) one versus one
 model.fit(input_data, input_species)
 
 # plot the hyper-planes on the training set
@@ -36,7 +36,7 @@ blue_patch = mpatches.Patch(color='blue', label='virginica')
 plt.legend(handles=[red_patch, green_patch, blue_patch])
 plt.xlabel('petal length [cm]')
 plt.ylabel('petal width [cm]')
-print(plt.show())
+plt.show()
 
 # plot tests
 plt.contour(xx, yy, res)
@@ -55,4 +55,4 @@ blue_patch = mpatches.Patch(color='blue', label='virginica')
 plt.legend(handles=[red_patch, green_patch, blue_patch])
 plt.xlabel('petal length [cm]')
 plt.ylabel('petal width [cm]')
-print(plt.show())
+plt.show()

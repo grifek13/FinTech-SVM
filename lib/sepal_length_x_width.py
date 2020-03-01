@@ -1,7 +1,6 @@
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
+import matplotlib.pyplot as plt
+
 import load_data as ld
 
 # Visualisation sepal_length x sepal_width
@@ -14,4 +13,4 @@ blue_patch = mpatches.Patch(color='blue', label='virginica')
 plt.legend(handles=[red_patch, green_patch, blue_patch])
 plt.xlabel('sepal length [cm]')
 plt.ylabel('sepal width [cm]')
-print(plt.show())
+plt.show()

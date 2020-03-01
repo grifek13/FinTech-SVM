@@ -1,7 +1,6 @@
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
+import matplotlib.pyplot as plt
+
 import load_data as ld
 
 # Ratio of petal to sepal.
@@ -14,4 +13,4 @@ blue_patch = mpatches.Patch(color='blue', label='virginica')
 plt.legend(handles=[red_patch, green_patch, blue_patch])
 plt.xlabel('petal length / petal width')
 plt.ylabel('sepal length / sepal width')
-print(plt.show())
+plt.show()

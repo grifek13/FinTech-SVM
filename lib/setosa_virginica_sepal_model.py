@@ -1,9 +1,9 @@
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
-import load_data as ld
+import matplotlib.pyplot as plt
+import numpy as np
 from sklearn import svm
+
+import load_data as ld
 
 # input for the model
 setosa_virginica = ld.training[ld.training.species != 'versicolor']
@@ -11,7 +11,7 @@ species_label = np.where(setosa_virginica['species'] == 'setosa', 0, 1) # to pre
 setosa_virginica = np.asmatrix(setosa_virginica[['sepal_length', 'sepal_width']])
 
 # fit the SVM model
-model = svm.SVC(kernel='linear', C=1) # default value 1 (how much we want to penalize the misclassify of points)
+model = svm.SVC(kernel='linear', C=1)  # default value 1 (how much we want to penalize the misclassify of points)
 model.fit(setosa_virginica, species_label)
 
 # plot the hyperplane on the training set
@@ -32,7 +32,7 @@ plt.plot(xx, yy)
 plt.legend(handles=[red_patch, blue_patch])
 plt.xlabel('sepal length [cm]')
 plt.ylabel('sepal width [cm]')
-print(plt.show())
+plt.show()
 
 # plot testset
 test_setosa = ld.testing[ld.testing.species == 'setosa']
@@ -48,8 +48,6 @@ plt.plot(xx, yy)
 plt.legend(handles=[red_patch, blue_patch])
 plt.xlabel('sepal length [cm]')
 plt.ylabel('sepal width [cm]')
-print(plt.show())
+plt.show()
 # To predict the species: model.predict([some sepal length, some sepal width])
 # returns 0 when setosa, 1 when virginica.
-
-
